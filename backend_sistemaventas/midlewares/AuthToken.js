@@ -10,7 +10,7 @@ console.log(req.headers);
     const verifiedToken = jwt.verify(token,process.env.SECRET)
 
     if (verifiedToken) {
-        console.log(verifiedToken);
+        //console.log(verifiedToken);
     req.user = verifiedToken
     next()
     }else {
