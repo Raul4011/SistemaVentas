@@ -4,25 +4,25 @@ const bcrypt = require("bcrypt");
 const signOptions = { expiresIn: "1h" };
 const fs = require("fs");
 
-
 const getAllUsers = (req, res) => {
-  const query = `SELECT * FROM usuarios`;
+ const query =`select * from usuarios`
 
-  connection.query(query, (err, results) => {
-    if (err)
-      return res.status(500).send({ message: "error al obtener usuarios" });
-    res.json(results);
-  });
+ connection.query(query,(err,results)=>{
+  if (err) throw err
+  res.status(200).send({message:"todos lños usuarios",results})
+ })
 };
 
-const createUser = (req, res) => {
+
+const createUser = async(req, res) => {
   const { nombre, email, contraseña } = req.body;
-  const values = [nombre, email, contraseña];
+
+  const hashedPassword = await bcrypt.hash(contraseña,10)
 
   const query = "INSERT into Usuarios (nombre,email,contraseña) values (?,?,?)";
 
   try {
-    connection.query(query, values, (err, results) => {
+    connection.query(query, [nombre,email,hashedPassword], (err, results) => {
       if (err)
         return res.status(500).send({ message: "error al crear un usuario" });
       res.send({ message: "usuario creado correctamente", results });
@@ -35,6 +35,7 @@ const createUser = (req, res) => {
 const AuthLogin = (req, res) => {
   const { nombre, contraseña } = req.body;
 
+  console.log(nombre,contraseña);
   const query = `select * from usuarios where nombre=?`;
 
   try {

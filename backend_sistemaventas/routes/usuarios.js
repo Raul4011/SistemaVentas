@@ -7,6 +7,4 @@ router.get("/users",getAllUsers)
 router.post("/users/create",createUser)
 router.post("/users/auth",AuthLogin)
 
-
-
 module.exports = router
