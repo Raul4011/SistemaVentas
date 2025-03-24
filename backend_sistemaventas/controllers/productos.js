@@ -14,7 +14,7 @@ const oneProduct =(req,res) =>{
 
     const id = req.params.id
 
-    const query = `select * from productos where id=?`
+    const query = `select * from productos where id=? and disponible=1`
 
     connection.query(query,[id],(err,result)=>{
         if(err) return res.status(500).json({message:err})

@@ -13,7 +13,6 @@ const getAllUsers = (req, res) => {
  })
 };
 
-
 const createUser = async(req, res) => {
   const { nombre, email, contraseña } = req.body;
 
@@ -32,10 +31,12 @@ const createUser = async(req, res) => {
   }
 };
 
+
+
 const AuthLogin = (req, res) => {
   const { nombre, contraseña } = req.body;
 
-  console.log(nombre,contraseña);
+  //console.log(nombre,contraseña);
   const query = `select * from usuarios where nombre=?`;
 
   try {
@@ -44,10 +45,9 @@ const AuthLogin = (req, res) => {
 
       const user = results[0];
 
-      //console.log(user);
-
       if (user) {
         const validpassword = await bcrypt.compare(contraseña, user.contraseña);
+        
 
         if (validpassword) {
         //     const secret = fs.readFileSync("../keys/private.pem");
@@ -62,7 +62,7 @@ const AuthLogin = (req, res) => {
             process.env.SECRET,
             signOptions
           );
-          res.status(200).send({message:"token creado correctamente",token})
+          res.status(200).send({message:"token creado correctamente",token,rol:user.rol})
         } else {
           res.status(404).send({ message: "la contraseña no es valida" });
         }

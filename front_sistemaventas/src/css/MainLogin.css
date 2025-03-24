@@ -1,0 +1,110 @@
+/* Fondo global de la página */
+
+  
+  
+  
+  /* Caja del formulario */
+  form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  /* Título del formulario */
+  form h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Etiquetas de los campos de formulario */
+  form .form-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  /* Campos de texto */
+  form .form-control {
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Efecto en el campo de texto cuando está enfocado */
+  form .form-control:focus {
+    border-color: #33A2FF;
+    box-shadow: 0 0 10px rgba(255, 123, 123, 0.4);
+    background-color: #58ADF5;
+    outline: none;
+  }
+  
+  /* Botón de login */
+  form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #33A2FF;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Efecto hover en el botón */
+  form button:hover {
+    background-color: #8FC6F4;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 123, 123, 0.2);
+  }
+  
+  /* Mensaje de error */
+  .alert-danger {
+    background-color: #336BFF;
+    color: #33A2FF;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Fondo animado para la página */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+ 
+  
+  /* Añadir sombra suave al formulario */
+  form {
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Espaciado entre el formulario y la parte inferior de la pantalla */
+  br {
+    margin-bottom: 20px;
+  }
+  
