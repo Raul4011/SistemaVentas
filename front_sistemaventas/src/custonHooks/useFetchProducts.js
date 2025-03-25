@@ -48,13 +48,14 @@ const useFecthProducts = () =>{
     const createProduct = async (product) => {
 
         try {
-            let response = await axios.post(BASE_URL_PRODUCTS,product,{
+            let response = await axios.post(`${BASE_URL_PRODUCTS}create/`,product,{
                 headers:{
                     Authorization: user
                 }
             })
             if(response){
                 alert("producto creado correctamente")
+             
             }else {
                 alert("ocurrio un error")
             }
@@ -64,16 +65,18 @@ const useFecthProducts = () =>{
         }
     }
 
-    const updateProduct = async(product,id)=>{
+    const updateProduct = async(product)=>{
+        console.log(product);
         try {
-            let response = axios.put(BASE_URL_PRODUCTS+id,{
+            let response = await axios.put(`${BASE_URL_PRODUCTS}editar/${product.id}`,product,{
                 headers:{
                     Authorization: `${user}`
                 },
-                product
+               
             })
             if (response) {
                 alert("producto editado correctamente")
+                await getAllProducts()
             }else {
                 alert("ocurrio un error")
             }
@@ -85,11 +88,14 @@ const useFecthProducts = () =>{
 
     const deleteProduct = async(id)=>{
         try {
-            let response = axios.put(BASE_URL_PRODUCTS+"eliminar"+id,{
-                disponible:false
+            let response = axios.put(`${BASE_URL_PRODUCTS}delete/${id}`,null,{
+                headers:{
+                    Authorization: `${user}`
+                }
             })
             if (response) {
                 alert("producto eliminado correctamente")
+                await getAllProducts()
             }else {
                 alert("ocurrio un error")
             }

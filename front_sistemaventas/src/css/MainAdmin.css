@@ -1,4 +1,46 @@
-.aside {
+/* Estilos generales para el contenedor principal */
+.mainAdmin {
+    width: 80%;
+    margin: auto;
+    
+  }
+  
+  /* Estilos para el aside */
+  .aside {
     display: flex;
     flex-direction: column;
-}
+    
+  }
+  
+  /* Estilos para la lista */
+  ul {
+    list-style-type: none; /* Elimina las viñetas */
+    padding: 0; /* Elimina el padding predeterminado */
+  }
+  
+  /* Estilos para cada elemento de la lista */
+  ul li {
+    margin-bottom: 30px; /* Aumenta el espacio entre los elementos de la lista */
+    text-align: center; /* Asegura que los botones estén centrados */
+  }
+  
+  /* Estilos para los botones dentro de la lista */
+  ul li button {
+    width: 70%; /* Hace que los botones ocupen el 100% del contenedor */
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del botón */
+  }
+  
+  /* Efecto hover */
+  ul li button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  

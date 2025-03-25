@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Row, Table, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "../css/MainAdmin.css";
 import MainDashBoard from "./MainDashBoard";
 import MainProducts from "./MainProducts";
@@ -26,12 +26,15 @@ const MainAdmin = () => {
   };
 
   return (
-    <div>
+    <div className="mainAdmin">
       <br />
       <br />
 
       <Row className="row">
-        <Col md={4} className="aside">
+        <Col md={4} className="aside text-center">
+        <br />
+        <h3 className="mt-5 mb-3">Sales System</h3>
+        <br />
           <ul>
             <li>
               <button
@@ -47,7 +50,6 @@ const MainAdmin = () => {
               </button>
             </li>
             <li>
-              {" "}
               <button onClick={() => handleClick("ventas")}>ventas</button>
             </li>
           </ul>
